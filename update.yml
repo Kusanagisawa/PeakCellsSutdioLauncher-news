@@ -8,6 +8,9 @@ on:
 jobs:
   update-news:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Autorise le robot à sauvegarder le fichier sur le dépôt
+      
     steps:
       - uses: actions/checkout@v3
       
