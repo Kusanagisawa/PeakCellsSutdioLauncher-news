@@ -4,7 +4,7 @@ const TOKEN = process.env.DISCORD_TOKEN;
 const CHANNEL_ID = process.env.DISCORD_CHANNEL_ID;
 
 async function fetchNews() {
-    const response = await fetch(`https://discord.com/api/v10/channels/${CHANNEL_ID}/messages?limit=10`, {
+    const response = await fetch(`https://discord.com/api/v10/channels/${CHANNEL_ID}/messages?limit=100`, {
         headers: { "Authorization": `Bot ${TOKEN}` }
     });
 
