@@ -20,7 +20,9 @@ async function fetchNews() {
         return {
             author: msg.author.username,
             date: dateObj.toLocaleDateString('fr-FR', options),
-            content: msg.content
+            content: msg.content,
+            // Ajoute l'URL de l'avatar s'il existe
+            avatar: msg.author.avatar ? `https://cdn.discordapp.com/avatars/${msg.author.id}/${msg.author.avatar}.png` : ""
         };
     });
 
