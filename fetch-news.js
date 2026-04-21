@@ -14,7 +14,9 @@ async function fetchNews() {
     }
 
     const messages = await response.json();
-    const formattedNews = messages.map(msg => {
+    const formattedNews = messages
+        .filter(msg => !msg.author.bot && msg.content.length > 0) // On ignore les messages des bots et les messages sans texte
+        .map(msg => {
         const dateObj = new Date(msg.timestamp);
         const options = { day: 'numeric', month: 'long', year: 'numeric' };
         return {
